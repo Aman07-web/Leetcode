@@ -1,4 +1,5 @@
 public class ll {
+
     public static void main(String[] args) {
         CreateLinkedlist list = new CreateLinkedlist();
         list.addLast(1);
