@@ -73,7 +73,21 @@ public class Palindrome_234ll {
     }
     return true;
   }    
+ // check cycle
+ public boolean checkCycle(){
+    Node slow=head;
+    Node fast=head;
 
+    while(fast!=null && fast.next!=null){
+        slow =slow.next;
+        fast=fast.next.next;
+
+        if(slow==head){
+            return true;
+        }
+    }
+    return false;
+ }
     public static void main(String[] args) {
         Palindrome_234ll ll=new Palindrome_234ll();
         ll.addlast(1);
@@ -83,7 +97,8 @@ public class Palindrome_234ll {
         ll.print(); // 1->2->2->1->
         System.out.println();
         //ll.midValue();
-        System.out.print(ll.checkPalindrome());
+        System.out.println(ll.checkCycle());
+       // System.out.print(ll.checkPalindrome());
 
     }
 }
